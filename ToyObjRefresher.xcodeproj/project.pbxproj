@@ -1,0 +1,308 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		98B7F728203D0D6F00175CFD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B7F727203D0D6F00175CFD /* main.m */; };
+		98B7F732203D1A4000175CFD /* CarUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B7F731203D1A4000175CFD /* CarUtilities.m */; };
+		98B7F739203D35E900175CFD /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B7F738203D35E900175CFD /* Car.m */; };
+		98B7F73C203D562400175CFD /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B7F73B203D562400175CFD /* Person.m */; };
+		98B7F741203D649000175CFD /* Bicycle.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B7F740203D649000175CFD /* Bicycle.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		98B7F722203D0D6F00175CFD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		98B7F724203D0D6F00175CFD /* ToyObjRefresher */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ToyObjRefresher; sourceTree = BUILT_PRODUCTS_DIR; };
+		98B7F727203D0D6F00175CFD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		98B7F731203D1A4000175CFD /* CarUtilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarUtilities.m; sourceTree = "<group>"; };
+		98B7F733203D1A5000175CFD /* CarUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarUtilities.h; sourceTree = "<group>"; };
+		98B7F737203D35E900175CFD /* Car.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
+		98B7F738203D35E900175CFD /* Car.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
+		98B7F73A203D562400175CFD /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		98B7F73B203D562400175CFD /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		98B7F73D203D63C400175CFD /* StreetLegal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StreetLegal.h; sourceTree = "<group>"; };
+		98B7F73F203D648F00175CFD /* Bicycle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bicycle.h; sourceTree = "<group>"; };
+		98B7F740203D649000175CFD /* Bicycle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bicycle.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		98B7F721203D0D6F00175CFD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		98B7F71B203D0D6E00175CFD = {
+			isa = PBXGroup;
+			children = (
+				98B7F726203D0D6F00175CFD /* ToyObjRefresher */,
+				98B7F725203D0D6F00175CFD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		98B7F725203D0D6F00175CFD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				98B7F724203D0D6F00175CFD /* ToyObjRefresher */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		98B7F726203D0D6F00175CFD /* ToyObjRefresher */ = {
+			isa = PBXGroup;
+			children = (
+				98B7F727203D0D6F00175CFD /* main.m */,
+				98B7F73A203D562400175CFD /* Person.h */,
+				98B7F73B203D562400175CFD /* Person.m */,
+				98B7F737203D35E900175CFD /* Car.h */,
+				98B7F738203D35E900175CFD /* Car.m */,
+				98B7F73F203D648F00175CFD /* Bicycle.h */,
+				98B7F740203D649000175CFD /* Bicycle.m */,
+				98B7F733203D1A5000175CFD /* CarUtilities.h */,
+				98B7F731203D1A4000175CFD /* CarUtilities.m */,
+				98B7F73E203D63D400175CFD /* Protocol */,
+			);
+			path = ToyObjRefresher;
+			sourceTree = "<group>";
+		};
+		98B7F73E203D63D400175CFD /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				98B7F73D203D63C400175CFD /* StreetLegal.h */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		98B7F723203D0D6F00175CFD /* ToyObjRefresher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 98B7F72B203D0D6F00175CFD /* Build configuration list for PBXNativeTarget "ToyObjRefresher" */;
+			buildPhases = (
+				98B7F720203D0D6F00175CFD /* Sources */,
+				98B7F721203D0D6F00175CFD /* Frameworks */,
+				98B7F722203D0D6F00175CFD /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ToyObjRefresher;
+			productName = ToyObjRefresher;
+			productReference = 98B7F724203D0D6F00175CFD /* ToyObjRefresher */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		98B7F71C203D0D6E00175CFD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Faiz Mokhtar";
+				TargetAttributes = {
+					98B7F723203D0D6F00175CFD = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 98B7F71F203D0D6E00175CFD /* Build configuration list for PBXProject "ToyObjRefresher" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 98B7F71B203D0D6E00175CFD;
+			productRefGroup = 98B7F725203D0D6F00175CFD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				98B7F723203D0D6F00175CFD /* ToyObjRefresher */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		98B7F720203D0D6F00175CFD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98B7F739203D35E900175CFD /* Car.m in Sources */,
+				98B7F728203D0D6F00175CFD /* main.m in Sources */,
+				98B7F73C203D562400175CFD /* Person.m in Sources */,
+				98B7F741203D649000175CFD /* Bicycle.m in Sources */,
+				98B7F732203D1A4000175CFD /* CarUtilities.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		98B7F729203D0D6F00175CFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		98B7F72A203D0D6F00175CFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		98B7F72C203D0D6F00175CFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 96ZJY6AYCD;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		98B7F72D203D0D6F00175CFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 96ZJY6AYCD;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		98B7F71F203D0D6E00175CFD /* Build configuration list for PBXProject "ToyObjRefresher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98B7F729203D0D6F00175CFD /* Debug */,
+				98B7F72A203D0D6F00175CFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		98B7F72B203D0D6F00175CFD /* Build configuration list for PBXNativeTarget "ToyObjRefresher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98B7F72C203D0D6F00175CFD /* Debug */,
+				98B7F72D203D0D6F00175CFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 98B7F71C203D0D6E00175CFD /* Project object */;
+}
