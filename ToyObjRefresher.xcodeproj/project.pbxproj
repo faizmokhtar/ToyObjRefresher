@@ -12,6 +12,9 @@
 		98B7F739203D35E900175CFD /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B7F738203D35E900175CFD /* Car.m */; };
 		98B7F73C203D562400175CFD /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B7F73B203D562400175CFD /* Person.m */; };
 		98B7F741203D649000175CFD /* Bicycle.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B7F740203D649000175CFD /* Bicycle.m */; };
+		98B7F745203D690D00175CFD /* Car+Maintenance.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B7F744203D690D00175CFD /* Car+Maintenance.m */; };
+		98B7F748203D6D2600175CFD /* Car+Protected.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B7F747203D6D2600175CFD /* Car+Protected.m */; };
+		98B7F74B203D6E3200175CFD /* Coupe.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B7F74A203D6E3200175CFD /* Coupe.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,6 +41,12 @@
 		98B7F73D203D63C400175CFD /* StreetLegal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StreetLegal.h; sourceTree = "<group>"; };
 		98B7F73F203D648F00175CFD /* Bicycle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bicycle.h; sourceTree = "<group>"; };
 		98B7F740203D649000175CFD /* Bicycle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bicycle.m; sourceTree = "<group>"; };
+		98B7F743203D690D00175CFD /* Car+Maintenance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Car+Maintenance.h"; sourceTree = "<group>"; };
+		98B7F744203D690D00175CFD /* Car+Maintenance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Car+Maintenance.m"; sourceTree = "<group>"; };
+		98B7F746203D6D2600175CFD /* Car+Protected.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Car+Protected.h"; sourceTree = "<group>"; };
+		98B7F747203D6D2600175CFD /* Car+Protected.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Car+Protected.m"; sourceTree = "<group>"; };
+		98B7F749203D6E3200175CFD /* Coupe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coupe.h; sourceTree = "<group>"; };
+		98B7F74A203D6E3200175CFD /* Coupe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Coupe.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,12 +82,15 @@
 				98B7F727203D0D6F00175CFD /* main.m */,
 				98B7F73A203D562400175CFD /* Person.h */,
 				98B7F73B203D562400175CFD /* Person.m */,
+				98B7F749203D6E3200175CFD /* Coupe.h */,
+				98B7F74A203D6E3200175CFD /* Coupe.m */,
 				98B7F737203D35E900175CFD /* Car.h */,
 				98B7F738203D35E900175CFD /* Car.m */,
 				98B7F73F203D648F00175CFD /* Bicycle.h */,
 				98B7F740203D649000175CFD /* Bicycle.m */,
 				98B7F733203D1A5000175CFD /* CarUtilities.h */,
 				98B7F731203D1A4000175CFD /* CarUtilities.m */,
+				98B7F742203D68C700175CFD /* Categories */,
 				98B7F73E203D63D400175CFD /* Protocol */,
 			);
 			path = ToyObjRefresher;
@@ -90,6 +102,17 @@
 				98B7F73D203D63C400175CFD /* StreetLegal.h */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		98B7F742203D68C700175CFD /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				98B7F743203D690D00175CFD /* Car+Maintenance.h */,
+				98B7F744203D690D00175CFD /* Car+Maintenance.m */,
+				98B7F746203D6D2600175CFD /* Car+Protected.h */,
+				98B7F747203D6D2600175CFD /* Car+Protected.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,10 +172,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98B7F748203D6D2600175CFD /* Car+Protected.m in Sources */,
+				98B7F745203D690D00175CFD /* Car+Maintenance.m in Sources */,
 				98B7F739203D35E900175CFD /* Car.m in Sources */,
 				98B7F728203D0D6F00175CFD /* main.m in Sources */,
 				98B7F73C203D562400175CFD /* Person.m in Sources */,
 				98B7F741203D649000175CFD /* Bicycle.m in Sources */,
+				98B7F74B203D6E3200175CFD /* Coupe.m in Sources */,
 				98B7F732203D1A4000175CFD /* CarUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

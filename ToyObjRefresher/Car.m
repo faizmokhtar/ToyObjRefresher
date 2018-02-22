@@ -7,62 +7,45 @@
 //
 
 #import "Car.h"
+#import "Car+Protected.h"
 
 static NSString *_defaultModel;
 
-@implementation Car {
-  // private instance variables
-  double _odometer;
-}
+@interface Car()
 
-+ (void)setDefaultModel:(NSString *)aModel {
-  _defaultModel = [aModel copy];
-}
+- (BOOL)engineIsWorking;
 
-+ (void)initialize {
-  if (self == [Car class]) {
-    _defaultModel = @"Nissan Versa";
+@end
+
+@implementation Car
+
+- (void)startEngine {
+  if ([self engineIsWorking]) {
+    NSLog(@"Starting the %@'s engine", _model);
   }
-}
-
-- (id)initWithModel:(NSString *)aModel {
-  self = [super init];
-  if (self) {
-    _model = [aModel copy];
-    _odometer = 0;
-  }
-
-  return self;
-}
-
-- (id)init {
-  return [self initWithModel:_defaultModel];
 }
 
 - (void)drive {
-  NSLog(@"Driving a %@. Vrooooom!", self.model);
+  [self prepareToDrive];
+  NSLog(@"The %@ is now driving", _model);
 }
 
-- (void)startEngine {
-  _running = YES;
+- (void)turnLeft {
+  NSLog(@"The %@ is turning left", _model);
 }
 
-- (void)stopEngine {
-  _running = NO;
+- (void)turnRight {
+  NSLog(@"The %@ is turning right", _model);
 }
 
-- (void)driveForDistance:(double)theDistance {
-  NSLog(@"The %@ just drove %0.1f miles",
-        _model, theDistance);
+- (BOOL)engineIsWorking {
+  return YES;
 }
 
-- (void)turnByAngle:(NSNumber *)theAngle
-            quickly:(NSNumber *)useParkingBrake {
-  if ([useParkingBrake boolValue]) {
-    NSLog(@"The %@ is drifting around the corner!", _model);
-  } else {
-    NSLog(@"The %@ is making a gentle %0.1f degree turn",
-          _model, [theAngle doubleValue]);
+- (void)driveForDuration:(double)duration withVariableSpeed:(double (^)(double))speedFunction steps:(int)numSteps {
+  double dt = duration / numSteps;
+  for (int i=1; i<=numSteps; i++) {
+    _odometer += speedFunction(i*dt) * dt;
   }
 }
 

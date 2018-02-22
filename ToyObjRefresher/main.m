@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "CarUtilities.h"
 #import "Car.h"
+#import "Car+Maintenance.h"
+#import "Coupe.h"
 #import "Bicycle.h"
 
 #define PI 3.14159 // Object like macros
@@ -37,6 +39,18 @@ int countByTwo() {
   static int currentCount = 0;
   currentCount += 2;
   return currentCount;
+}
+
+NSString *getRandomCarFromInventory(NSArray *inventory) {
+  int maximum = (int)[inventory count];
+  if (maximum == 0) {
+    NSException *e = [NSException exceptionWithName:@"EmptyInventoryException"
+                                             reason:@"*** The inventory has no cars!"
+                                           userInfo:nil];
+    @throw e;
+  }
+  int randomIndex = arc4random_uniform(maximum);
+  return inventory[randomIndex];
 }
 
 // Declaration
@@ -200,72 +214,111 @@ int main(int argc, const char * argv[]) {
 
     [toyota drive];
 
-    [Car setDefaultModel:@"Nissan Versa"];
+    Coupe *porsche = [[Coupe alloc] init];
+    porsche.model = @"Porsche 911 Turbo";
+    Car *ford = [[Car alloc] init];
+    ford.model = @"Ford F-150";
 
-    Car *nissan = [[Car alloc] init];
-    NSLog(@"Created a %@", [nissan model]);
+    [porsche startEngine];
+    [porsche drive];
+    [porsche turnLeft];
+    [porsche turnRight];
 
-    Car *chevy = [[Car alloc] initWithModel:@"Chevy Corvette"];
-    NSLog(@"Created a %@, too.", chevy.model);
-
-    Car *delorean = [[Car alloc] initWithModel:@"Delorean"];
-    NSLog(@"%@ is an instance of the %@ class",
-          [delorean model], [delorean class]);
-
-    // Check an object against a class and all subclasses
-    if ([delorean isKindOfClass:[NSObject class]]) {
-      NSLog(@"%@ is an instance of NSObject or one "
-            "of its subclasses",
-            [delorean model]);
-    } else {
-      NSLog(@"%@ is not an instance of NSObject or "
-            "one of its subclasses",
-            [delorean model]);
+    if([porsche needsOilChange]) {
+      [porsche changeOil];
     }
+    [porsche rotateTires];
+    [porsche jumpBatteryUsingCar:ford];
 
-    // Check an object against a class, but not its subclasses
-    if ([delorean isMemberOfClass:[NSObject class]]) {
-      NSLog(@"%@ is a instance of NSObject",
-            [delorean model]);
-    } else {
-      NSLog(@"%@ is not an instance of NSObject",
-            [delorean model]);
-    }
+    double (^distanceFromRateAndTime)(double rate, double time);
 
-    // Convert between strings and classes
-    if (NSClassFromString(@"Car") == [Car class]) {
-      NSLog(@"I can convert between strings and classes!");
-    }
+    distanceFromRateAndTime = ^double(double rate, double time) {
+      return rate * time;
+    };
 
-    Car *honda = [[Car alloc] init];
-    [honda startEngine];
-    NSLog(@"Car is running: %d", honda.isRunning);
-    [honda stopEngine];
-    NSLog(@"Car is running: %d", honda.isRunning);
+    double dx = distanceFromRateAndTime(35, 1.5);
+    NSLog(@"A car driving 35 mph will travel "
+          @"%.2f miles in 1.5 hours.", dx);
 
-    Person *john = [[Person alloc] init];
-    john.name = @"John";
+    double (^randomPercent)(void) = ^ {
+      return (double)arc4random() / 4294967295;
+    };
+    NSLog(@"Gas tank is %.1f%% full",
+          randomPercent() * 100);
 
-    Car *wira = [[Car alloc] init];
-    wira.model = @"Proton Wira";
-    wira.driver = john;
-    john.car = wira;
+    NSString *make = @"Honda";
+    NSString *(^getFullCarName)(NSString *) = ^(NSString *model) {
+      return [make stringByAppendingFormat:@" %@", model];
+    };
 
-    NSLog(@"%@ is driving the %@", wira.driver, wira.model);
+    NSLog(@"%@", getFullCarName(@"Accord"));
 
-    Car *myvi = [[Car alloc] init];
-    NSString *myviBrand = [NSMutableString stringWithString:@"Myvi 1.6"];
-    myvi.model = myviBrand;
+    // Try changing the non-local variable (it won't change the block)
+    make = @"Porsche";
+    NSLog(@"%@", getFullCarName(@"911 Turbo")); // Honda 911 Turbo
 
-    NSLog(@"%@", myvi.model);
-    NSLog(@"%@", honda.model);
-
-    Bicycle *bike = [[Bicycle alloc] init];
-    [bike startPedaling];
-    [bike signalLeftTurn];
-    [bike signalStop];
-    [bike lockToStructure:nil];
+    __block int num = 0;
+    int (^count)(void) = ^ {
+      num += 1;
+      return num;
+    };
+    NSLog(@"%d", count());    // 1
+    NSLog(@"%d", count());    // 2
+    NSLog(@"%d", count());    // 3
   }
+
+  Car *theCar = [[Car alloc] init];
+  [theCar driveForDuration:10.0
+         withVariableSpeed:^double(double time) {
+           return 5.0;
+         } steps:100];
+  NSLog(@"The car has now driven %.2f meters", theCar.odometer);
+
+  [theCar driveForDuration:10.0
+         withVariableSpeed:^double(double time) {
+           return time + 5.0;
+         } steps:100];
+  NSLog(@"The car has now driven %.2f meters", theCar.odometer);
+
+  NSArray *inventory = @[@"Honda Civic",
+                         @"Nissan Versa",
+                         @"Ford F-150"];
+  int selectedIndex = 3;
+  @try {
+    NSString *car = getRandomCarFromInventory(@[]);
+    NSLog(@"The selected car is %@", car);
+  } @catch(NSException *theException) {
+    if ([theException.name  isEqual: @"EmptyInventoryException"]) {
+      NSLog(@"Caught an EmptyInventoryException");
+    } else {
+      NSLog(@"Ignored a %@ exception", theException);
+      @throw;
+    }
+  } @finally {
+    NSLog(@"Executing finally block");
+  }
+
+  NSString *fileToLoad = @"/path/to/non-existent-file.txt";
+  NSError *error;
+  NSString *content = [NSString stringWithContentsOfFile:fileToLoad
+                                                encoding:NSUTF8StringEncoding
+                                                   error:&error];
+
+  if (content == nil) {
+    // Method failed
+    NSLog(@"Error loading file %@!", fileToLoad);
+    NSLog(@"Domain: %@", error.domain);
+    NSLog(@"Error Code: %ld", error.code);
+    NSLog(@"Description: %@", [error localizedDescription]);
+    NSLog(@"Reason: %@", [error localizedFailureReason]);
+  } else {
+    // Method succeeded
+    NSLog(@"Content loaded!");
+    NSLog(@"%@", content);
+  }
+
+  NSLog(@"Underlying Error: %@", error.userInfo[NSUnderlyingErrorKey]);
+
   return 0;
 }
 
